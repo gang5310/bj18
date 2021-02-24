@@ -28,7 +28,7 @@ SECRET_KEY = '_vk^#knwi!ocnb4r^06%6ji(ij1au0+gznrzroxwf9cw6&@za4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -171,3 +171,11 @@ SESSION_CACHE_ALIAS = "default"
 
 # 配置登录url地址   
 LOGIN_URL='/user/login' # /accounts/login
+# 设置Django的文件存储类
+DEFAULT_FILE_STORAGE='utils.fdfs.storage.FDFSStorage'
+
+# 设置fdfs使用的client.conf文件路径
+FDFS_CLIENT_CONF='./utils/fdfs/client.conf'
+
+# 设置fdfs存储服务器上nginx的IP和端口号
+FDFS_URL='http://10.19.81.175:8888/'
